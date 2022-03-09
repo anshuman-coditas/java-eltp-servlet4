@@ -34,13 +34,13 @@ public class WelcomeServlet extends HttpServlet {
 		out.println("Welcome "+user);
 		out.println("<a href='ByeServlet'>Bye</a>");
 		out.print("<script type='text/javascript'>");
-		out.print("myfunction(){document.getElementById('myform').submit()");
+		out.print("function myfunction(){document.getElementById('myform').submit();}");
 		out.print("</script>");
+		out.print("<body onload='myfunction()'>");
 		out.print("<form id='myform' action='ByeServlet'> ");
 		out.print("<input type='hidden' name='uname' value='"+user+"'>");
-		out.print("</form>");
-		out.print("<div onclick='myfunction()' style='color:blue;'>");
-		
+		out.print("</form>");		
+		out.print("</body>");
 	}
 
 	/**
